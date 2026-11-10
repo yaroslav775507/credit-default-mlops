@@ -1,0 +1,28 @@
+stages:
+  prepare:
+    cmd: PYTHONPATH=src python -m pd_model.data prepare
+    deps:
+      - data/UCI_Credit_Card.csv
+      - src/pd_model/data.py
+      - src/pd_model/schema.py
+      - requirements.txt
+    outs:
+      - data/processed/clients.csv
+  train:
+    cmd: PYTHONPATH=src python -m pd_model.train
+    deps:
+      - data/processed/clients.csv
+      - src/pd_model/train.py
+      - src/pd_model/pipeline.py
+      - src/pd_model/schema.py
+      - requirements.txt
+    outs:
+      - models/pd_model.joblib
+      - models/reference.csv
+      - data/processed/test.csv
+    plots:
+      - reports/roc.png:
+          cache: false
+    metrics:
+      - reports/metrics.json:
+          cache: false

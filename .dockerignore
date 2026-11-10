@@ -1,0 +1,6 @@
+**
+!requirements-api.txt
+!src/
+!src/**
+!models/
+!models/pd_model.joblib

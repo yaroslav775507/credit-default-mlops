@@ -1,0 +1,64 @@
+{
+  "train_rows": 24000,
+  "test_rows": 6000,
+  "test_default_rate": 0.22116666666666668,
+  "threshold": 0.5,
+  "winner": {
+    "algorithm": "HistGradientBoostingClassifier",
+    "max_leaf_nodes": 15,
+    "cv_roc_auc": 0.7835368975162064,
+    "cv_std": 0.0052136847274854075,
+    "rank": 1
+  },
+  "test_metrics": {
+    "roc_auc": 0.7792565187529703,
+    "precision": 0.6593707250341997,
+    "recall": 0.3632253202712886,
+    "f1": 0.4684159378036929
+  },
+  "candidates": [
+    {
+      "algorithm": "LogisticRegression",
+      "C": 0.01,
+      "cv_roc_auc": 0.7570610149409781,
+      "cv_std": 0.009026507857862695,
+      "rank": 6
+    },
+    {
+      "algorithm": "LogisticRegression",
+      "C": 0.1,
+      "cv_roc_auc": 0.7586957642466462,
+      "cv_std": 0.008321219236507752,
+      "rank": 5
+    },
+    {
+      "algorithm": "LogisticRegression",
+      "C": 1.0,
+      "cv_roc_auc": 0.7589434258936142,
+      "cv_std": 0.008206228689932694,
+      "rank": 4
+    },
+    {
+      "algorithm": "HistGradientBoostingClassifier",
+      "max_leaf_nodes": 7,
+      "cv_roc_auc": 0.7818724464521943,
+      "cv_std": 0.0038068463596140265,
+      "rank": 2
+    },
+    {
+      "algorithm": "HistGradientBoostingClassifier",
+      "max_leaf_nodes": 15,
+      "cv_roc_auc": 0.7835368975162064,
+      "cv_std": 0.0052136847274854075,
+      "rank": 1
+    },
+    {
+      "algorithm": "HistGradientBoostingClassifier",
+      "max_leaf_nodes": 31,
+      "cv_roc_auc": 0.7814479282903838,
+      "cv_std": 0.005602812858480093,
+      "rank": 3
+    }
+  ],
+  "mlflow_run": "d1e1e04ce80c4dea9259c5b436916ac2"
+}

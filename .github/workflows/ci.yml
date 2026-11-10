@@ -1,0 +1,21 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: black --check src scripts tests
+      - run: flake8 src scripts tests
+      - run: pytest -q
+      - name: Загрузить датасет UCI
+        run: python scripts/download_uci.py
+      - name: Проверить данные с помощью Great Expectations
+        run: PYTHONPATH=src python -m pd_model.data validate
